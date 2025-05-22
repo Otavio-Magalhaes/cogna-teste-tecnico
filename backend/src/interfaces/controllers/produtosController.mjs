@@ -13,3 +13,19 @@ export const PegarTodosOsProdutos = async(request, response) =>{
     response.status(500).json({msg:"erro interno do servidor."})    
   }
 }
+
+
+export const PegarProdutoPorId = async(request, response)=>{
+  const {id} = request.params
+  console.log(id)
+  try{
+     const produto = await produtoRepository.getById(id)
+     if(!produto){
+      response.status(404).json({msg: "Produto Não Encontrado."})
+     }
+     response.status(200).json(produto)
+  }catch(err){
+    console.error(err)
+    response.status(500).json({msg:"Erro interno do servidor"})
+  }
+}

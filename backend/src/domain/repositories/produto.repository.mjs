@@ -7,11 +7,7 @@ export class ProdutoRepository{
     throw new Error("Metodo ainda não implementado")
   }
 
-  async getByCategory(categoria){
-    throw new Error("Metodo ainda não implementado")
-  }
-
-  async getByName(nome){
+  async getById(id){
     throw new Error("Metodo ainda não implementado")
   }
 

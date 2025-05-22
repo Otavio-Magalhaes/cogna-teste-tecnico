@@ -27,13 +27,10 @@ export class ProdutoPrismaRepository extends ProdutoRepository {
     })
   }
 
-  async getByName(nome) {
-    return await prisma.produto.findMany({
-      wherer: { nome }
+  async getById(id) {
+    return await prisma.produto.findUnique({
+      where: { id }
     })
   }
-
-
-
 }
 
