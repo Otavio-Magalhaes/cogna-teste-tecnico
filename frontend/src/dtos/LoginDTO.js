@@ -7,7 +7,7 @@ export class LoginDTO {
   toJson() {
     return JSON.stringify({
       email: this.email,
-      senha: this.senha,
+      password: this.senha,
     });
   }
 }
