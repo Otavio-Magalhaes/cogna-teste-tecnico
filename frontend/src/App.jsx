@@ -1,11 +1,13 @@
+import { BrowserRouter as Router } from 'react-router-dom';
+import AppRoutes from './routes/appRoutes.jsx';
+
+
 function App() {
-
-
   return (
-    <div class="bg-grape min-w-full min-h-dvh" >
-       <h1 class="">Rodando</h1>
-    </div>
-  )
+    <Router>
+      <AppRoutes />
+    </Router>
+  );
 }
 
-export default App
+export default App;
