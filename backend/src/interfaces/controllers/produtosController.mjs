@@ -1,3 +1,4 @@
+import { criarProduto } from "../../domain/useCases/criarProduto.mjs";
 import { ProdutoPrismaRepository } from "../../infrastructure/database/prisma/ProdutoPrismaRepository.mjs"
 
 const produtoRepository = new ProdutoPrismaRepository
@@ -20,7 +21,6 @@ export const pegarTodosOsProdutos = (produtoRepository) => {
 export const pegarProdutoPorId = (produtoRepository) => {
   return async (request, response) => {
     const { id } = request.params
-    console.log(id)
     try {
       const produto = await produtoRepository.getById(id)
       if (!produto) {
@@ -30,6 +30,20 @@ export const pegarProdutoPorId = (produtoRepository) => {
     } catch (err) {
       console.error(err)
       response.status(500).json({ msg: "Erro interno do servidor" })
+    }
+  }
+}
+
+export const adicionarProtudo = (produtoRepository) => {
+  return async (request, response) =>{
+    try{
+      const produtoData = request.validated
+    
+      const newProduto = await criarProduto(produtoRepository,produtoData)
+      response.status(201).json(newProduto)
+    }catch(err){
+      console.log(err)
+      response.status(500).json({msg: "Erro interno do servidor"})
     }
   }
 }

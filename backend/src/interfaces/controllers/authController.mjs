@@ -68,3 +68,9 @@ export const handleRefreshToken = async (request, response) => {
     return response.status(401).json({ msg: err.message });
   }
 } 
+
+
+export const PegarUsuarioAtual = (request, response) => {
+  const user = request.user
+  return response.status(200).json({user})
+}

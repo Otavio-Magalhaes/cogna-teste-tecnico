@@ -21,12 +21,6 @@ export class ProdutoPrismaRepository extends ProdutoRepository {
     })
   }
 
-  async getByCategory(categoria) {
-    return await prisma.produto.findMany({
-      where: { categoria }
-    })
-  }
-
   async getById(id) {
     return await prisma.produto.findUnique({
       where: { id }

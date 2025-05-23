@@ -1,16 +1,15 @@
 export class Produto{
-  constructor({nome, descricao,preco,categoriaId,imagemUrl}){
+  constructor({nome, descricao,preco,imagemUrl}){
     this.nome = nome
     this.descricao = descricao || ""
     this.preco = preco
-    this.categoriaId = categoriaId
     this.imagemUrl = imagemUrl || ""
   }
 
 
   validate(){
-    if(!this.nome || !this.preco || this.categoria){
-      throw new Error("Produto Precisa ter Nome, Preço e Categoria")
+    if(!this.nome || !this.preco ){
+      throw new Error("Produto Precisa ter Nome e Preço")
     }
   }
 
@@ -21,8 +20,7 @@ export class Produto{
       nome: this.nome,
       descricao: this.descricao,
       preco: this.preco,
-      categoriaId: this.categoriaId,
-      imagem: this.imagemUrl
+      imagemUrl: this.imagemUrl
     })
   }
 
