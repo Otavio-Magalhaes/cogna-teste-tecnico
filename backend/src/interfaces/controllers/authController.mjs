@@ -10,7 +10,7 @@ export const login = async (request, response) => {
     const { email, password } = request.body
 
     const loginData = { email, password }
-
+  
     const { acessToken, refreshToken, user } = await loginUser(userRepository, loginData)
 
 
@@ -26,6 +26,7 @@ export const login = async (request, response) => {
       data: { refreshToken: refreshToken }
     })
 
+    console.log("era pra estar logando.")
     response.status(200).json({
       msg: "login realizado com sucesso",
       user: user,
