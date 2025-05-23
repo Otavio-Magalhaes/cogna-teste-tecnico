@@ -9,10 +9,6 @@ export default function Home() {
           Projeto Cogna - Teste Técnico
         </h1>
 
-        <p className="mb-10 text-lg max-w-lg text-center text-violet-200">
-          Bem-vindo ao projeto simples para o teste técnico da Cogna. Faça login ou cadastre-se para começar.
-        </p>
-
         <div className="flex gap-6">
           <Link
             to="/login"
