@@ -13,6 +13,19 @@ services:
       - mysql-cogna
     restart: unless-stopped
 
+  
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/public:/app/public
+      - ./frontend/index.html:/app/index.html
+    restart: unless-stopped
+    depends_on:
+      - backend
+
   mysql-cogna:
     image: mysql:8.0
     restart: unless-stopped
@@ -24,6 +37,7 @@ services:
       MYSQL_DATABASE: cogna
     volumes:
       - mysql_data:/var/lib/mysql
+
 
 volumes:
   mysql_data:
