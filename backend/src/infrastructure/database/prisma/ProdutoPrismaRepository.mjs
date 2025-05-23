@@ -12,12 +12,9 @@ export class ProdutoPrismaRepository extends ProdutoRepository {
 
   async getAll() {
     return await prisma.produto.findMany({
-     orderBy: {
-        categoria: { nome: "asc" }
-      },
-      include: {
-        categoria: true
-      }
+     orderBy:{
+      criadoEm: "asc"
+     }
     })
   }
 
