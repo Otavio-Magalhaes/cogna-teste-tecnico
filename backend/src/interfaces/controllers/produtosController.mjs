@@ -14,7 +14,6 @@ export const PegarTodosOsProdutos = async(request, response) =>{
   }
 }
 
-
 export const PegarProdutoPorId = async(request, response)=>{
   const {id} = request.params
   console.log(id)
