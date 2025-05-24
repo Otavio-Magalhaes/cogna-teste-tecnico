@@ -30,7 +30,7 @@ export function useAuth() {
         setUser(data);
       } catch (err) {
         setUser(null);
-        localStorage.removeItem('accessToken'); // limpa token inválido
+        localStorage.removeItem('accessToken');
       } finally {
         setLoading(false);
       }

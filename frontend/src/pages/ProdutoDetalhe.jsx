@@ -26,11 +26,11 @@ export default function ProdutoDetalhe() {
   if (!produto) return null;
 
   return (
-   <main className="min-h-screen bg-gradient-to-br from-indigo-50 to-indigo-100 py-12 px-6 sm:px-12 text-indigo-900">
+   <main className="min-h-screen bg-gradient-to-br from-purple-800 via-violet-700 to-indigo-900 py-12 px-6 sm:px-12 text-white">
   <div className="max-w-5xl mx-auto">
     <Link
       to="/produtos"
-      className="inline-flex items-center gap-2 text-indigo-700 hover:text-indigo-500 transition-colors font-medium mb-8"
+      className="inline-flex items-center gap-2 text-violet-200 hover:text-white transition-colors font-medium mb-8"
     >
       <svg
         className="w-5 h-5"
@@ -45,10 +45,9 @@ export default function ProdutoDetalhe() {
     </Link>
 
     <div className="bg-white rounded-2xl shadow-lg flex flex-col md:flex-row overflow-hidden hover:shadow-purple-500/40 transition-shadow duration-300">
-   
       <div className="md:w-1/2 h-64 md:h-auto overflow-hidden">
         <img
-          src={produto.imagem || imageNotFound}
+          src={produto.imagemUrl || imageNotFound}
           alt={produto.nome}
           className="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105"
         />
@@ -63,6 +62,7 @@ export default function ProdutoDetalhe() {
     </div>
   </div>
 </main>
+
 
 
   );
