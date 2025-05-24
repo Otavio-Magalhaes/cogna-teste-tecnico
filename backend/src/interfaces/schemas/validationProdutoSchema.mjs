@@ -26,8 +26,5 @@ export const validateProduto = {
   },
   imagemUrl: {
     optional: true,
-    isURL: {
-      errorMessage: "O campo imagemUrl deve ser uma URL válida.",
-    },
   },
 };
