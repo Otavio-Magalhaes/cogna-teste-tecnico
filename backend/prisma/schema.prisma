@@ -1,5 +1,6 @@
 generator client {
   provider = "prisma-client-js"
+  seed = "node prisma/seed.js"
 }
 
 datasource db {
@@ -19,7 +20,7 @@ model User {
 model Produto {
   id          String   @id @default(uuid())
   nome        String
-  descricao   String?
+  descricao   String? @db.VarChar(1000)
   preco       Float
   imagemUrl   String? 
   criadoEm    DateTime @default(now())

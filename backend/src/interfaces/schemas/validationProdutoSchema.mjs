@@ -13,6 +13,10 @@ export const validateProduto = {
     isString: {
       errorMessage: "A descrição deve ser um texto.",
     },
+    isLength: {
+    options: { max: 1000 },
+    errorMessage: "A descrição deve ter no máximo 1000 caracteres.",
+  },
   },
 
   preco: {

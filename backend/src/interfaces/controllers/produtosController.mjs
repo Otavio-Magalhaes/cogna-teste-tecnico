@@ -24,7 +24,7 @@ export const pegarProdutoPorId = (produtoRepository) => {
     try {
       const produto = await produtoRepository.getById(id)
       if (!produto) {
-        response.status(404).json({ msg: "Produto Não Encontrado." })
+        return response.status(404).json({ msg: "Produto Não Encontrado." })
       }
       response.status(200).json(produto)
     } catch (err) {
