@@ -87,7 +87,6 @@ Outros arquivos: configurações gerais (`.env.mjs`, `package.json`, etc).
 ![Tela de Login do projeto](./screenshots/login.png)
 ![Tela de Cadastro do projeto](./screenshots/cadastro.png)
 ![Tela de Produtos Desktop do projeto](./screenshots/ProdutosDesktop.png)
-![Tela de Produtos Desktop do projeto](./screenshots/ProdutosDesktop.png)
 ![Tela de Produtos/:id Desktop do projeto](./screenshots/ProdutoDetalhe.png)
 ![Tela de Produtos Tablet do projeto](./screenshots/ProdutoTablet.png)
 ![Tela de Produtos/:id Tablet do projeto](./screenshots/ProdutoDetalheTablet.png)
