@@ -22,7 +22,17 @@ Este projeto implementa um sistema fullstack com autenticação baseada em JSON 
   - Docker e Docker Compose para containerização dos serviços (backend, frontend e banco de dados).
  
 ## Justificativa de Escolha Tecnológica
-O  projeto foi desenvolvido seguindo a stack sugerida pelo teste técnico. Para o frontend, foi utilizado React, conforme orientação do Tech Lead Rafael Ferres, considerando que era a tecnologia com a qual eu possuía maior familiaridade.
+O projeto foi desenvolvido com base na stack sugerida pelo teste técnico.
+
+No frontend, utilizei React. Para o gerenciamento de rotas, utilizei o React Router DOM. Além disso, usei o React Helmet para a inclusão de metatags dinâmicas, contribuindo para a otimização da aplicação em termos de SEO.
+
+No backend, optei por Express.js, também conforme a stack sugerida. Para validação das requisições, utilizei o express-validator, garantindo que os dados recebidos nas rotas estivessem no formato correto e evitando problemas com dados inválidos.
+
+A biblioteca bcrypt foi utilizada para aplicar hashes nas senhas, aumentando a segurança dos dados sensíveis armazenados.
+
+Para a camada de persistência, utilizei o ORM Prisma, que facilita a comunicação com o banco de dados, tendo escolhido o MySQL. Além disso, o Prisma contribui para a prevenção de ataques como SQL Injection.
+
+A autenticação foi implementada com JWT (JSON Web Token), garantindo segurança e escalabilidade na gestão de sessões e acessos.
 
 ### Como Executar Localmente com Docker
 
@@ -30,6 +40,17 @@ O  projeto foi desenvolvido seguindo a stack sugerida pelo teste técnico. Para 
 ``` 
 git clone https://github.com/Otavio-Magalhaes/cogna-teste-tecnico.git
 cd cogna-teste-tecnico
+```
+
+### 🛠️ Configuração de Variaveis de Ambiente
+
+Antes de iniciar o projeto, crie um arquivo `.env` na raiz do backend com as seguintes variáveis de ambiente:
+
+```env
+JWT_ACCESS_TOKEN_SCRET="Token"
+REFRESH_TOKEN_SCRET="Token"
+PORT=3000 
+DATABASE_URL="mysql://root:root@mysql:3306/cogna" 
 ```
 
 ### Construa e inicie os containers Docker:

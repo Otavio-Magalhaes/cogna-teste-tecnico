@@ -9,6 +9,7 @@ services:
       - DATABASE_URL=mysql://root:root@mysql-cogna:3306/cogna
     volumes:
       - ./backend:/app
+      - /app/node_modules
     depends_on:
       - mysql-cogna
     restart: unless-stopped
@@ -20,8 +21,7 @@ services:
       - "5173:5173"
     volumes:
       - ./frontend/src:/app/src
-      - ./frontend/public:/app/public
-      - ./frontend/index.html:/app/index.html
+      - /app/node_modules
     restart: unless-stopped
     depends_on:
       - backend

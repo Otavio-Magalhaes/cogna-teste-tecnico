@@ -5,6 +5,7 @@ export function useProduto(id, token) {
   const [produto, setProduto] = useState(null);
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState(null);
+  
   useEffect(() => {
     async function carregarProduto() {
       try {
